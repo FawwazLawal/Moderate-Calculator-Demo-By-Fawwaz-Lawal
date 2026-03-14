@@ -1,0 +1,108 @@
+<!-- I like to leave comments in my code so I can remember what each part does, remember this is a HTML5 document  -->
+ <!-- to update code do the following
+  create a new branch git checkout -b <"Title-Of-Your-Branch (something other than main)">
+  make your changes
+  save the file and then in the terminal do the following commands 
+  git add .
+  git commit -m "update calculator with brief description of the changes you made"
+  git push origin <Title-Of-Your-Branch (something other than main)>-->
+<!DOCTYPE html> <!-- !DOCTYPE tells the browser that this is an HTML5 document. It should be the first thing in the HTML document. -->
+<html lang="en">
+    <!-- <> denotes the opening and closing tags for the HTML element -->
+<head>
+    <meta charset="UTF-8"> <!-- meta tag provides metadata about the HTML document. 
+                            charset specifies the character encoding for the document π  ÷  ×  √  €-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- we want itdisplayed correctly on different devices -->                        
+    <title>Moderate Calculator by Fawwaz Lawal this for the smartfucks</title>
+    <link rel="stylesheet" href="style.css"> <!-- link tag is used to link an external CSS file to the HTML document. 
+                                            rel attribute specifies the relationship between the current document and the linked document (in this case, it's a stylesheet) 
+                                            href attribute specifies the URL of the linked document (in this case, it's style.css) -->
+</head>
+<body> 
+    <div class="app-shell"> <!-- This is the main container for the calculator app -->
+    <!-- this block is for the left side and main calculator area-->   
+    <main class="calculator-panel">
+        <header class-top-bar>
+            <div class="menu-button">M</div>
+            <h1>oH yU sAh sMat</h1>
+        </header>
+        
+        <section class="display-panel">
+            <div id="expression" class="expression"></div>
+            <div id="display" class="display">0</div>
+        </section>
+
+        <section class="memory-row">
+            <button class="memory-button" id="mc">MC</button>
+            <button class="memory-button" id="mr">MR</button>
+            <button class="memory-button" id="ms">MS</button>
+            <button class="memory-button" id="mplus">M+</button>
+            <button class="memory-button" id="mminus">M-</button>
+        </section>
+<!-- this block is for the buttons, if you are having issues with buttons you wanna check here-->
+        <section class="button-grid">
+    <button type="button" id="second">2nd</button>
+    <button type="button" id="pi">π</button>
+    <button type="button" id="euler">e</button>
+    <button type="button" id="clear">C</button>
+    <button type="button" id="delete">⌫</button>
+
+    <button type="button" id="square">x²</button>
+    <button type="button" id="reciprocal">1/x</button>
+    <button type="button" id="absolute">|x|</button>
+    <button type="button" id="exp">exp</button>
+    <button type="button" id="mod">mod</button>
+
+    <button type="button" id="sqrt">√x</button>
+    <button type="button" data-value="(">(</button>
+    <button type="button" data-value=")">)</button>
+    <button type="button" id="factorial">n!</button>
+    <button type="button" data-value="/">÷</button>
+
+    <button type="button">xʸ</button>
+    <button type="button" data-value="7">7</button>
+    <button type="button" data-value="7">8</button>
+    <button type="button" data-value="9">9</button>
+    <button type="button" data-value="*">×</button>
+
+    <button type="button">10ˣ</button>
+    <button type="button" data-value="4">4</button>
+    <button type="button" data-value="5">5</button>
+    <button type="button" data-value="6">6</button>
+    <button type="button" data-value="-">−</button>
+
+    <button type="button">log</button>
+    <button type="button" data-value="1">1</button>
+    <button type="button" data-value="2">2</button>
+    <button type="button" data-value="3">3</button>
+    <button type="button" data-value="+">+</button>
+
+    <button type="button">ln</button>
+    <button type="button">+/−</button>
+    <button type="button" data-value="0">0</button>
+    <button type="button" data-value=".">.</button>
+    <button type="button" id="equals">=</button>
+</section>
+    </main> 
+    <!-- this block is for the right side and history area-->
+    <aside class="history-panel">
+        <div class="history-tabs">
+            <button type="button" class="active-tab">History</button>
+            <button type="button">Memory</button>
+        </div>
+
+        <div id="history-list" class="history-list">
+            <!-- History items will be dynamically added here -->
+             <p>WHAT YOU LOOKING AT!!!</p>  
+        </div>
+    </aside>
+
+    </div>
+    
+    <script src="script.js"></script> <!-- script tag is used to link an external JavaScript file to the HTML document. 
+                                        src attribute specifies the URL of the linked JavaScript file (in this case, it's script.js) -->
+</body>
+</html>
+
+<!-- at this point all we did was make buttons-->
+  

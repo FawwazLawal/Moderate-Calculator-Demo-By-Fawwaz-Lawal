@@ -1,0 +1,263 @@
+/* 
+CSS styles the calculator app by controlling layout, colors, spacing, fonts,
+and interactive states such as hover and click behavior.
+
+This file uses:
+- CSS Grid for the main layout and button layout
+- Flexbox for top bar and display alignment
+- A dark theme inspired by desktop calculator apps
+- Hover and active states for better user feedback
+- A JavaScript-triggered equals-button rainbow animation
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111315;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+.app-shell {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    min-height: 100vh;
+}
+
+/* Main calculator area */
+.calculator-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    background: linear-gradient(to right, #16181c, #111315);
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.top-bar h1 {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* Display section */
+.display-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: 180px;
+    padding: 20px 8px;
+}
+
+.expression {
+    font-size: 20px;
+    color: #9aa0a6;
+    min-height: 28px;
+    margin-bottom: 10px;
+}
+
+.display {
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* Memory buttons row */
+.memory-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.memory-row button {
+    background: transparent;
+    color: #d7d7d7;
+    border: none;
+    padding: 12px 0;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.memory-row button:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Main calculator grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    flex: 1;
+}
+
+.button-grid button {
+    border: 1px solid #20242a;
+    background: #171a1f;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+    min-height: 78px;
+    transition: background 0.15s ease, transform 0.08s ease;
+}
+
+.button-grid button:hover {
+    background: #22262d;
+}
+
+.button-grid button:active {
+    background: #2c3138;
+    transform: scale(0.98);
+}
+
+/* Top scientific/function rows */
+.button-grid button:nth-child(-n+15) {
+    background: #1b1f24;
+    font-size: 22px;
+}
+
+.button-grid button:nth-child(-n+15):hover {
+    background: #252a31;
+}
+
+/* Operator column */
+.button-grid button:nth-child(20),
+.button-grid button:nth-child(25),
+.button-grid button:nth-child(30),
+.button-grid button:nth-child(35) {
+    background: #1f2329;
+}
+
+.button-grid button:nth-child(20):hover,
+.button-grid button:nth-child(25):hover,
+.button-grid button:nth-child(30):hover,
+.button-grid button:nth-child(35):hover {
+    background: #2b3139;
+}
+
+/* Number buttons */
+.button-grid button:nth-child(21),
+.button-grid button:nth-child(22),
+.button-grid button:nth-child(23),
+.button-grid button:nth-child(26),
+.button-grid button:nth-child(27),
+.button-grid button:nth-child(28),
+.button-grid button:nth-child(31),
+.button-grid button:nth-child(32),
+.button-grid button:nth-child(33),
+.button-grid button:nth-child(37),
+.button-grid button:nth-child(38),
+.button-grid button:nth-child(39) {
+    background: #121418;
+}
+
+.button-grid button:nth-child(21):hover,
+.button-grid button:nth-child(22):hover,
+.button-grid button:nth-child(23):hover,
+.button-grid button:nth-child(26):hover,
+.button-grid button:nth-child(27):hover,
+.button-grid button:nth-child(28):hover,
+.button-grid button:nth-child(31):hover,
+.button-grid button:nth-child(32):hover,
+.button-grid button:nth-child(33):hover,
+.button-grid button:nth-child(37):hover,
+.button-grid button:nth-child(38):hover,
+.button-grid button:nth-child(39):hover {
+    background: #1d2127;
+}
+
+/* Equals button default state */
+#equals {
+    background: orange;
+    color: black;
+    font-weight: 600;
+    transition: background 0.15s ease, transform 0.08s ease;
+}
+
+/* Equals button hover state */
+#equals:hover {
+    background: #ffb347;
+}
+
+/* Rainbow wave animation */
+@keyframes rainbowWave {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* JavaScript will add this class for 2 seconds after click */
+#equals.equals-animate {
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+    background-size: 200% 200%;
+    background-position: 0% 50%;
+    color: white;
+    animation: rainbowWave 0.5s linear infinite;
+}
+
+/* Right history panel */
+.history-panel {
+    background: #15181d;
+    border-left: 1px solid #20242a;
+    padding: 24px 18px;
+}
+
+.history-tabs {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.history-tabs button {
+    background: none;
+    border: none;
+    color: #cfd3d8;
+    font-size: 18px;
+    cursor: pointer;
+    padding-bottom: 6px;
+}
+
+.history-tabs .active-tab {
+    border-bottom: 2px solid #4aa3ff;
+}
+
+.history-list {
+    color: #c2c7cc;
+    font-size: 16px;
+}
+
+.history-list p {
+    margin-top: 18px;
+}

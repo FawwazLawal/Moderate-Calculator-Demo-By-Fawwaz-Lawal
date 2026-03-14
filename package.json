@@ -1,0 +1,24 @@
+{
+  "name": "moderate-calculator-demo-by-fawwaz-lawal",
+  "version": "1.0.0",
+  "description": "This demo was created by Fawwaz Lawal \r More notes are in the actual code for ease of reference",
+  "main": "script.js",
+"scripts": {
+  "start": "electron ."
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FawwazLawal/Moderate-Calculator-Demo-By-Fawwaz-Lawal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/FawwazLawal/Moderate-Calculator-Demo-By-Fawwaz-Lawal/issues"
+  },
+  "homepage": "https://github.com/FawwazLawal/Moderate-Calculator-Demo-By-Fawwaz-Lawal#readme",
+  "devDependencies": {
+    "electron": "^41.0.2"
+  }
+}
