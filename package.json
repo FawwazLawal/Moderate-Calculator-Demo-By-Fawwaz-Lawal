@@ -2,7 +2,7 @@
   "name": "moderate-calculator-demo-by-fawwaz-lawal",
   "version": "1.0.0",
   "description": "This demo was created by Fawwaz Lawal \r More notes are in the actual code for ease of reference",
-  "main": "script.js",
+  "main": "main.js",
 "scripts": {
   "start": "electron ."
 },

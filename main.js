@@ -14,7 +14,7 @@ function createWindow() {
         }
     });
 
-    win.loadFile("index.html");
+    win.loadFile("Moderate-Calculator.html");
 }
 
 app.whenReady().then(() => {
